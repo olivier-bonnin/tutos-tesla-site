@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>📚 Centre de Tutos – Tesla</title>
+  <meta name="description" content="Hub simple pour accéder à mes tutos (vidéos, PDF, audio) depuis l'écran Tesla." />
+  <style>
+    :root { --radius:16px; --pad:16px; }
+    html, body { margin:0; padding:0; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.4;
+      font-size: 18px;
+      -webkit-text-size-adjust: 100%;
+      background: #f7f7f9;
+      color: #111;
+    }
+    header {
+      padding: 20px 16px 8px 16px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      background: #f7f7f9cc;
+      backdrop-filter: blur(6px);
+    }
+    h1 { margin: 0 0 6px 0; font-size: 1.4rem; }
+    .sub { color:#444; font-size: 0.95rem; }
+    main { padding: 12px; max-width: 980px; margin: 0 auto; }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media (min-width: 720px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+    a.card {
+      display: block;
+      text-decoration: none;
+      border-radius: var(--radius);
+      padding: 14px;
+      background: #ffffff;
+      border: 1px solid #e6e6ef;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+      transition: transform 0.05s ease, box-shadow 0.1s ease;
+      color: inherit;
+    }
+    a.card:active { transform: scale(0.995); }
+    .title { font-weight: 700; font-size: 1.05rem; margin-bottom: 6px; }
+    .desc { color: #333; font-size: 0.95rem; }
+    .list {
+      margin: 4px 0 0 0;
+      padding-left: 18px;
+      color: #222;
+      font-size: 0.95rem;
+    }
+    .section { margin: 18px 0; }
+    .hint {
+      font-size: 0.85rem; color:#444; margin: 4px 0 0 0;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #666;
+      padding: 20px;
+    }
+    .tag { font-size: 0.85rem; background:#f0f2ff; color:#1b3ef3; padding:2px 8px; border-radius:999px; }
+    .group { border:1px dashed #e0e0ea; background:#fff; border-radius:var(--radius); padding:12px; }
+    /* Touch targets */
+    .btn {
+      display:inline-block; margin:4px 6px 0 0; padding:12px 14px;
+      border-radius:12px; background:#111; color:#fff; text-decoration:none; font-weight:600;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📚 Centre de Tutos — Tesla</h1>
+    <div class="sub">Accès rapide à mes vidéos, PDF et audios (optimisé pour grand écran tactile).</div>
+  </header>
+
+  <main>
+    <!-- 🚦 CONSEIL : remplace les liens # par tes URL (YouTube, Google Drive, OneDrive, GitHub, etc.) -->
+    <div class="grid">
+      <a class="card" href="#python">
+        <div class="title">🐍 Python</div>
+        <div class="desc">Intro, scripts utiles, exercices. <span class="tag">Vidéo + PDF</span></div>
+      </a>
+      <a class="card" href="#pandas">
+        <div class="title">🐼 Pandas</div>
+        <div class="desc">Manipulation de DataFrame, tips pratiques. <span class="tag">Vidéo + PDF</span></div>
+      </a>
+      <a class="card" href="#sql">
+        <div class="title">🗄 SQL</div>
+        <div class="desc">SELECT, JOIN, agrégations, exercices. <span class="tag">Vidéo + PDF</span></div>
+      </a>
+      <a class="card" href="#ml">
+        <div class="title">📊 Machine Learning</div>
+        <div class="desc">Classification, régression, time-series. <span class="tag">Vidéo + PDF</span></div>
+      </a>
+      <a class="card" href="#audio">
+        <div class="title">🎧 Audios</div>
+        <div class="desc">Tutoriels à écouter en roulant (MP3). <span class="tag">Audio</span></div>
+      </a>
+      <a class="card" href="#bibli">
+        <div class="title">📂 Bibliothèque</div>
+        <div class="desc">Tous mes PDF & liens utiles. <span class="tag">PDF + Liens</span></div>
+      </a>
+    </div>
+
+    <!-- Sections détaillées -->
+    <div class="section" id="python">
+      <h2>🐍 Python</h2>
+      <div class="group">
+        <ul class="list">
+          <li>▶️ <a href="#" target="_blank" rel="noopener">Playlist YouTube – Bases Python</a></li>
+          <li>📄 <a href="assets/pdf/Python_fiche_memo.pdf" target="_blank" rel="noopener">Fiche mémo (PDF)</a></li>
+          <li>▶️ <a href="#" target="_blank" rel="noopener">Exercices guidés (YouTube)</a></li>
+        </ul>
+        <p class="hint">Astuce : charge tes PDFs dans <code>assets/pdf</code> et remplace les liens.</p>
+      </div>
+    </div>
+
+    <div class="section" id="pandas">
+      <h2>🐼 Pandas</h2>
+      <div class="group">
+        <ul class="list">
+          <li>▶️ <a href="#" target="_blank" rel="noopener">Pandas – Manipuler des DataFrames (YouTube)</a></li>
+          <li>📄 <a href="assets/pdf/Pandas_exemples.pdf" target="_blank" rel="noopener">Exemples PDF</a></li>
+          <li>📄 <a href="assets/pdf/Pandas_trucs_astuces.pdf" target="_blank" rel="noopener">Trucs & astuces (PDF)</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="sql">
+      <h2>🗄 SQL</h2>
+      <div class="group">
+        <ul class="list">
+          <li>▶️ <a href="#" target="_blank" rel="noopener">SQL – Sélections & Jointures (YouTube)</a></li>
+          <li>📄 <a href="assets/pdf/SQL_exercices_corriges.pdf" target="_blank" rel="noopener">Exercices corrigés (PDF)</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="ml">
+      <h2>📊 Machine Learning</h2>
+      <div class="group">
+        <ul class="list">
+          <li>▶️ <a href="#" target="_blank" rel="noopener">Classification supervisée – Détection d’anomalies</a></li>
+          <li>▶️ <a href="#" target="_blank" rel="noopener">Séries temporelles – Prévision d’arrêts machine</a></li>
+          <li>📄 <a href="assets/pdf/ML_guide_scikit-learn.pdf" target="_blank" rel="noopener">Guide scikit-learn (PDF)</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="audio">
+      <h2>🎧 Audios</h2>
+      <div class="group">
+        <ul class="list">
+          <li>🔊 <a href="assets/audio/Chapitre_Python_intro.mp3" target="_blank" rel="noopener">Chapitre audio – Python (MP3)</a></li>
+          <li>🔊 <a href="assets/audio/Chapitre_Pandas.mp3" target="_blank" rel="noopener">Chapitre audio – Pandas (MP3)</a></li>
+          <li>🔊 <a href="#" target="_blank" rel="noopener">Playlist audio hébergée (Drive/OneDrive)</a></li>
+        </ul>
+        <p class="hint">En roulant, privilégie l’audio. Les vidéos ne se lisent qu’à l’arrêt dans Tesla Theater.</p>
+      </div>
+    </div>
+
+    <div class="section" id="bibli">
+      <h2>📂 Bibliothèque & Liens utiles</h2>
+      <div class="group">
+        <ul class="list">
+          <li>🗂 <a href="#" target="_blank" rel="noopener">Dossier Google Drive – Tutos</a></li>
+          <li>🗂 <a href="#" target="_blank" rel="noopener">Dossier OneDrive – Tutos</a></li>
+          <li>💻 <a href="#" target="_blank" rel="noopener">Repo GitHub – Projets & Notebooks</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <a class="btn" href="#top">⬆️ Haut de page</a>
+      <a class="btn" href="#" target="_blank" rel="noopener">⭐ Ajouter cette page en favori (navigateur Tesla)</a>
+    </div>
+
+  </main>
+
+  <footer>
+    Fichier statique — idéal pour GitHub Pages • Dernière mise à jour : 2025-09-09.
+  </footer>
+</body>
+</html>
